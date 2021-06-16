@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/utils-inmap",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Invoke a function for each element in a collection and update the collection in-place.",
   "license": "Apache-2.0",
   "author": {
