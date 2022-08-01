@@ -34,30 +34,38 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/utils-inmap
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var inmap = require( '@stdlib/utils-inmap' );
+inmap = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var inmap = require( 'path/to/vendor/umd/utils-inmap/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.inmap;
+})();
+</script>
 ```
 
 #### inmap( collection, fcn\[, thisArg ] )
@@ -186,8 +194,13 @@ var mean = context.sum / context.count;
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var isEven = require( '@stdlib/assert-is-even' ).isPrimitive;
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-even@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {.isPrimitive;
 var inmap = require( '@stdlib/utils-inmap' );
 
 var bool;
@@ -214,6 +227,11 @@ bool = ( out === arr );
 console.log( bool );
 
 console.log( out );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -322,9 +340,9 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/utils/for-each]: https://github.com/stdlib-js/utils-for-each
+[@stdlib/utils/for-each]: https://github.com/stdlib-js/utils-for-each/tree/umd
 
-[@stdlib/utils/inmap-right]: https://github.com/stdlib-js/utils-inmap-right
+[@stdlib/utils/inmap-right]: https://github.com/stdlib-js/utils-inmap-right/tree/umd
 
 <!-- </related-links> -->
 
