@@ -1,7 +1,7 @@
-/**
+/*
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2019 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -16,16 +16,55 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 2.0
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var isCollection = require( '@stdlib/assert-is-collection' );
-var isFunction = require( '@stdlib/assert-is-function' );
-var format = require( '@stdlib/error-tools-fmtprodmsg' );
+import { Collection } from '@stdlib/types/object';
 
+/**
+* Returns an updated collection element.
+*
+* @returns updated element
+*/
+type Nullary = () => any;
 
-// MAIN //
+/**
+*Returns an updated collection element.
+*
+* @param value - collection value
+* @returns updated element
+*/
+type Unary = ( value: any ) => any;
+
+/**
+* Returns an updated collection element.
+*
+* @param value - collection value
+* @param index - collection index
+* @returns updated element
+*/
+type Binary = ( value: any, index: number ) => any;
+
+/**
+* Returns an updated collection element.
+*
+* @param value - collection value
+* @param index - collection index
+* @param collection - input collection
+* @returns updated element
+*/
+type Ternary = ( value: any, index: number, collection: Collection ) => any;
+
+/**
+* Returns an updated collection element.
+*
+* @param value - collection value
+* @param index - collection index
+* @param collection - input collection
+* @returns updated element
+*/
+type Callback = Nullary | Unary | Binary | Ternary;
 
 /**
 * Invokes a function once for each element in a collection and updates the collection in-place.
@@ -34,12 +73,11 @@ var format = require( '@stdlib/error-tools-fmtprodmsg' );
 *
 * -   The invoked function's return value is cached prior to updating a collection. Before updating the collection, a collection must be inspected to ensure that a collection has not been resized during invocation such that an index no longer has a corresponding element in the collection. Were a return value automatically used to update a collection, an input collection could be converted into a sparse data structure. While some might consider this a feature, here, we take stance that a user should be less clever.
 *
-* @param {Collection} collection - input collection
-* @param {Function} fcn - function to invoke
-* @param {*} [thisArg] - execution context
-* @throws {TypeError} first argument must be a collection
-* @throws {TypeError} second argument must be a function
-* @returns {Collection} input collection
+*
+* @param collection - input collection
+* @param fcn - function to invoke
+* @param thisArg - execution context
+* @returns input collection
 *
 * @example
 * function scale( value, index, collection ) {
@@ -54,32 +92,9 @@ var format = require( '@stdlib/error-tools-fmtprodmsg' );
 * var bool = ( out === arr );
 * // returns true
 */
-function inmap( collection, fcn, thisArg ) {
-	var len;
-	var v;
-	var i;
-	if ( !isCollection( collection ) ) {
-		throw new TypeError( format( '0kLBO', collection ) );
-	}
-	if ( !isFunction( fcn ) ) {
-		throw new TypeError( format( '0kL2S', fcn ) );
-	}
-	len = collection.length;
-	for ( i = 0; i < len; i++ ) {
-		v = fcn.call( thisArg, collection[ i ], i, collection );
-
-		// Account for dynamically resizing a collection...
-		if ( len !== collection.length ) {
-			len = collection.length;
-		}
-		if ( i < len ) {
-			collection[ i ] = v;
-		}
-	}
-	return collection;
-}
+declare function inmap( collection: Collection, fcn: Callback, thisArg?: any ): Collection; // tslint-disable-line max-line-length
 
 
 // EXPORTS //
 
-module.exports = inmap;
+export = inmap;
