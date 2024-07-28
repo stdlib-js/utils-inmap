@@ -45,38 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/utils-inmap
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-inmap = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var inmap = require( 'path/to/vendor/umd/utils-inmap/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.inmap;
-})();
-</script>
+var inmap = require( '@stdlib/utils-inmap' );
 ```
 
 #### inmap( collection, fcn\[, thisArg ] )
@@ -205,13 +199,8 @@ var mean = context.sum / context.count;
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-even@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.isPrimitive;
+```javascript
+var isEven = require( '@stdlib/assert-is-even' ).isPrimitive;
 var inmap = require( '@stdlib/utils-inmap' );
 
 var bool;
@@ -238,11 +227,6 @@ bool = ( out === arr );
 console.log( bool );
 
 console.log( out );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -312,8 +296,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/utils-inmap.svg
 [npm-url]: https://npmjs.org/package/@stdlib/utils-inmap
 
-[test-image]: https://github.com/stdlib-js/utils-inmap/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/utils-inmap/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/utils-inmap/actions/workflows/test.yml/badge.svg?branch=v0.2.2
+[test-url]: https://github.com/stdlib-js/utils-inmap/actions/workflows/test.yml?query=branch:v0.2.2
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/utils-inmap/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/utils-inmap?branch=main
@@ -355,11 +339,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/utils/for-each]: https://github.com/stdlib-js/utils-for-each/tree/umd
+[@stdlib/utils/for-each]: https://github.com/stdlib-js/utils-for-each
 
-[@stdlib/utils/inmap-right]: https://github.com/stdlib-js/utils-inmap-right/tree/umd
+[@stdlib/utils/inmap-right]: https://github.com/stdlib-js/utils-inmap-right
 
-[@stdlib/utils/map]: https://github.com/stdlib-js/utils-map/tree/umd
+[@stdlib/utils/map]: https://github.com/stdlib-js/utils-map
 
 <!-- </related-links> -->
 
