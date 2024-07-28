@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import inmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@esm/index.mjs';
+import inmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@v0.2.2-esm/index.mjs';
 ```
 
 #### inmap( collection, fcn\[, thisArg ] )
@@ -188,7 +188,7 @@ var mean = context.sum / context.count;
 <script type="module">
 
 var isEven = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-is-even' ).isPrimitive;
-import inmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@esm/index.mjs';
+import inmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-inmap@v0.2.2-esm/index.mjs';
 
 var bool;
 var arr;
