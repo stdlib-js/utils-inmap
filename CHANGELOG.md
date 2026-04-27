@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-04-23)
+## Unreleased (2026-04-27)
 
 <section class="issues">
 
@@ -24,6 +24,8 @@ This release closes the following issue:
 
 <details>
 
+-   [`19216fd`](https://github.com/stdlib-js/stdlib/commit/19216fd118234a4dd38792e9e1d8f982617a5795) - **bench:** refactor to use string interpolation in `utils` [(#11409)](https://github.com/stdlib-js/stdlib/pull/11409) _(by Karan Anand, Athan Reines)_
+-   [`0dc62ae`](https://github.com/stdlib-js/stdlib/commit/0dc62ae39a4817ff888e9736c3ea599f6beff4e5) - **build:** replace `eslint-plugin-node` with `eslint-plugin-n` [(#10952)](https://github.com/stdlib-js/stdlib/pull/10952) _(by Philipp Burckhardt, Athan Reines)_
 -   [`3ed1a6e`](https://github.com/stdlib-js/stdlib/commit/3ed1a6e0425fd8b5f64046ec549a6a1480725a41) - **chore:** fix JavaScript lint errors [(#11047)](https://github.com/stdlib-js/stdlib/pull/11047) _(by Baixiaochun)_
 
 </details>
@@ -36,9 +38,12 @@ This release closes the following issue:
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
 -   Baixiaochun
+-   Karan Anand
+-   Philipp Burckhardt
 
 </section>
 
